@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Burger.css'
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient'
 
@@ -17,7 +17,7 @@ const Burger = props => {
   if(tranformIngredients.length === 0 ){
     tranformIngredients = <p>Please start adding ingredients!</p>
   }
-    
+
   return (
   <div className='burger'>
     
@@ -27,4 +27,7 @@ const Burger = props => {
   </div>)
 }
 
-export default Burger;
+export default React.memo(Burger, (prevProps,nextProps) => {
+  // Notice condition is inversed from shouldComponentUpdate
+  return false
+}) ;

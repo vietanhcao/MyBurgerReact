@@ -1,9 +1,13 @@
 import React from 'react'
-
+import './DrawerTogger.css'
 
 const DrawerTogger = (props) => {
   return (
-    <div onClick={props.opened}>MENU</div>
+    <div className='drawer-toggle' onClick={props.opened}>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   )
 }
 
